@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promo Pameran Buku - Literasi Store</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e67e22; /* Warna orange untuk diskon */
+            --bg-color: #fdf6e3; /* Warna kertas lama */
+        }
+
+        body { font-family: 'Georgia', serif; line-height: 1.6; margin: 0; padding: 20px; background-color: var(--bg-color); color: #333; }
+        .container { max-width: 1000px; margin: auto; background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        
+        /* Banner Promo */
+        .promo-banner { 
+            background: var(--accent-color); 
+            color: white; 
+            padding: 15px; 
+            text-align: center; 
+            border-radius: 8px; 
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        
+        /* Info Section */
+        .info-box { border-left: 5px solid var(--accent-color); padding-left: 20px; margin-bottom: 20px; }
+        .discount-badge { 
+            display: inline-block; 
+            background: #d32f2f; 
+            color: white; 
+            padding: 5px 15px; 
+            border-radius: 50px; 
+            font-size: 0.9em; 
+            margin-bottom: 10px;
+        }
+
+        /* Form Styling */
+        .form-card { background: #f9f9f9; padding: 20px; border-radius: 8px; border: 1px solid #ddd; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input, textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; }
+        
+        .btn-submit { 
+            background: var(--primary-color); 
+            color: white; 
+            border: none; 
+            padding: 12px 25px; 
+            cursor: pointer; 
+            border-radius: 6px; 
+            width: 100%;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        .btn-submit:hover { background: #1a252f; }
+
+        /* Map */
+        .map-responsive { overflow: hidden; padding-bottom: 50%; position: relative; height: 0; border-radius: 8px; margin-top: 15px; border: 2px solid #eee; }
+        .map-responsive iframe { left: 0; top: 0; height: 100%; width: 100%; position: absolute; border: 0; }
+
+        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="promo-banner">
+        📚 Big Book Sale: Diskon Hingga 70% Selama Pameran! 📚
+    </div>
+
+    <div class="grid">
+        <div>
+            <div class="info-box">
+                <span class="discount-badge">Event Terbatas</span>
+                <h2>Pameran Buku Tahunan</h2>
+                <p>Jangan lewatkan koleksi buku langka dan novel best-seller dengan harga spesial hanya di lokasi pameran kami.</p>
+            </div>
+
+            <div style="margin-bottom: 20px;">
+                <strong>📅 Tanggal:</strong> 1 - 15 November 2026<br>
+                <strong>⏰ Waktu:</strong> 09:00 - 21:00 WIB<br>
+                <strong>📍 Lokasi:</strong> Gedung Literasi, Lantai 2, Surabaya.
+            </div>
+
+            <div class="map-responsive">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.6919!2d112.737!3d-7.257!" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+
+        <div class="form-card">
+            <h3>Daftar Pengunjung / Tanya Stok</h3>
+            <p style="font-size: 0.9em; color: #666;">Isi formulir untuk mendapatkan voucher tambahan 10% saat datang ke lokasi.</p>
+            
+            <form action="#">
+                <div class="form-group">
+                    <label>Nama Lengkap</label>
+                    <input type="text" placeholder="Nama sesuai identitas..." required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="untuk pengiriman voucher" required>
+                </div>
+                <div class="form-group">
+                    <label>Buku yang Dicari (Opsional)</label>
+                    <textarea rows="3" placeholder="Sebutkan judul buku jika ingin cek stok..."></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Dapatkan Voucher Diskon</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
