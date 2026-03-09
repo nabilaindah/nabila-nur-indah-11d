@@ -1,0 +1,68 @@
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Testimoni - Toko Buku Indah</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Toko Buku Indah</h1>
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="Produk.html">Katalog</a>
+            <a href="bedah-buku.html">Bedah Buku</a>
+            <a href="testimoni.html">Testimoni</a>
+            <a href="tampil-testimoni.html">Testimoni Pembeli</a>
+        </nav>
+    </header>
+
+    <main class="formulir">
+        <h2>Testimoni Pembeli:</h2>
+        
+        <section id="daftarTestimoni"></section>
+
+        <button id="hapusSemua" style="margin-top: 20px;">Hapus Semua Testimoni</button>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Toko Buku Indah</p>
+    </footer>
+
+    <script>
+        const container = document.getElementById('daftarTestimoni');
+        
+        // Pastikan nama key 'testimoniList' konsisten
+        const testimoniList = JSON.parse(localStorage.getItem('testimoniList')) || [];
+
+        if (testimoniList.length === 0) {
+            container.innerHTML = "<p>Belum ada testimoni.</p>";
+        } else {
+            testimoniList.forEach((t) => {
+                const el = document.createElement('div');
+                el.className = 'testimoni-box';
+                el.innerHTML = `
+                    <div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; border-radius: 5px;">
+                        <p><strong>Nama:</strong> ${t.nama}</p>
+                        <p><strong>Email:</strong> ${t.email}</p>
+                        <p><strong>Pesan:</strong> ${t.pesan}</p>
+                    </div>
+                `;
+                container.appendChild(el);
+            });
+        }
+
+        // Fungsi Hapus Semua
+        document.getElementById("hapusSemua").addEventListener("click", function() {
+            const konfirmasi = confirm("Apakah Anda yakin ingin menghapus semua testimoni?");
+            if (konfirmasi) {
+                // Nama key disamakan: 'testimoniList'
+                localStorage.removeItem("testimoniList"); 
+                location.reload();
+            }
+        });
+    </script>
+
+</body>
+</html>

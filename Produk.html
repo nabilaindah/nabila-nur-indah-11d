@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Produk Buku</title>
+    <style>
+        /* CSS untuk membuat produk berjejer ke samping */
+        .daftar-produk {
+            display: flex; /* Mengaktifkan mode flexbox */
+            flex-wrap: wrap; /* Supaya otomatis pindah ke baris baru jika layar sempit */
+            gap: 20px; /* Jarak antar kotak produk */
+            justify-content: center; /* Posisi produk di tengah */
+            padding: 20px;
+        }
+
+        .produk {
+            width: 250px; /* Lebar setiap kotak produk */
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .produk img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Beranda</a>
+        <a href="produk.html">produk</a>
+        <a href="bedah-buku.html">Bedah Buku</a>
+        <a href="testimoni.html">Testimoni</a>
+        <a href="tampil-testimoni.html">Testimoni Pembeli</a>
+    </nav>
+
+    <h1>Daftar Produk Buku</h1>
+
+    <section class="daftar-produk">
+        <div class="produk">
+            <img src="image/hujan.jpg" alt="Aku tak membenci hujan" />
+            <h2>Judul Buku 1</h2>
+            <p class="harga">Rp89.000</p>
+            <p class="deskripsi">Buku ini membahas seorang remaja laki-laki yang sejak kecil hidup dalam luka batin...</p>
+        </div>
+
+        <div class="produk">
+            <img src="image/back to school.jpg" alt="Back to school" />
+            <h2>Judul Buku 2</h2>
+            <p class="harga">Rp90.000</p>
+            <p class="deskripsi">Buku ini membahas semangat baru untuk memulai perjalanan belajar dan menemukan jati diri. Kisah ini menggambarkan
+            hari-hari awal kembali ke sekolah yang penuh harapan, tantangan, dan kejutan—mulai dari pertemanan baru, konflik remaja, 
+            hingga mimpi-mimpi yang perlahan terbentuk. Dengan alur yang ringan namun bermakna, cerita ini mengajak pembaca merasakan 
+            kembali suasana kelas, tawa di lorong sekolah</p>
+        </div>
+
+        <div class="produk">
+            <img src="image/antariksa.jpg" alt="Antariksa" />
+            <h2>Judul Buku 3</h2>
+            <p class="harga">Rp95.000</p>
+            <p class="deskripsi">Buku ini membahas seorang siswa yang terkenal kejam dan tidak punya hati sudah menjadi makanan sehari-hari untuknya.
+            Sebagai ketua geng di sekolah. Antariksa termasuk salah satu orang yang paling ditakuti. Antariksa bisa
+            dijadikan sebagai tumpuan jika kalian bersikap baik kepadanya. Sebaliknya, ia bisa berubah menjadi palung 
+            dalam yang bisa mendekap kalian kapan saja jika berani mengusik ketenangan hidupnya. Karena dia Antariksa,
+            Ketua Pasdan Mandala yang paling disegani oleh pasukan lain di luar sana.</p>
+        </div>
+    </section>
+</body>
+</html>
