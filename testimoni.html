@@ -5,6 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulir Testimoni - Toko Buku Indah</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Tambahan CSS sederhana agar gambar rapi */
+        .banner-promo {
+            width: 100%;
+            max-width: 800px; /* Sesuaikan dengan lebar form */
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .formulir {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+    </style>
 </head>
 <body>
 
@@ -20,6 +38,8 @@
 </header>
 
 <main class="formulir">
+    <img src="c:\Users\nabila nur indah\Downloads\tulip aesthetic __ tulip wallpaper.jpg" alt="Banner Pameran Buku" class="banner-promo">
+
     <h2>Berikan Testimoni Anda</h2>
     
     <form id="formTestimoni">
@@ -43,66 +63,43 @@
 </main>
 
 <footer>
-    <p>&copy; 2025 Toko Buku Indah</p>
+    <p>&copy; 2026 Toko Buku Indah</p>
 </footer>
 
-</body>
-</html>
 <script>
-    document.getElementById('formTestimoni').addEventListener
-('submit', function(e) {
-    e.preventDefault();
+    // Hanya gunakan SATU block script agar tidak bentrok
+    document.getElementById('formTestimoni').addEventListener('submit', function(e) {
+        e.preventDefault();
 
-    const nama = document.getElementById('nama').value;
-    const email = 
-document.getElementById('email').value;
-    const pesan =
-document.getElementById('pesan').value;
+        // Mengambil data dari input
+        const nama = document.getElementById('nama').value;
+        const asalsekolah = document.getElementById('asalsekolah').value;
+        const email = document.getElementById('email').value;
+        const rating = document.getElementById('rating').value;
+        const pesan = document.getElementById('pesan').value;
 
-    const databaru = { nama, email, pesan};
-    
-    // Ambil list dari localStorage
-    const testimoniList =a
-JSON.parse(localStorage.getItem('testimoniList')) || []
+        // Menyusun data ke dalam objek
+        const dataBaru = { 
+            nama: nama, 
+            sekolah: asalsekolah, 
+            email: email, 
+            rating: rating, 
+            pesan: pesan 
+        };
+        
+        // Ambil list dari localStorage dan pastikan tidak ada typo
+        const testimoniList = JSON.parse(localStorage.getItem('testimoniList')) || [];
 
-    // Tambahkan testimoni baru
-    testimoniList.push(databaru);
+        // Tambahkan data baru ke array (push)
+        testimoniList.push(dataBaru);
 
-    // Simpan kembali ke localStorage
-    localStorage.setItem('testimoniList',
-JSON.stringify(testimoniList));
+        // Simpan kembali ke localStorage
+        localStorage.setItem('testimoniList', JSON.stringify(testimoniList));
 
-    // Arahkan ke halaman konfirmasi 
-    window.location.href = 'proses-testimoni.html';
-          });
-    </script>
-
-</body>
-</html>
-
-<script>
-    documen.getElementById('formTestimoni').addEventListe
-ner('submit', function(e) {
-     e.preventDefault();
-
-     const nama = document.getElementById('nama').value;
-     const email =
-document.getElementById('emial').value;
-     const pesan = 
-documen.getElementById('pesan').value;
-   
-     const dataBaru = { nama, email, pesan }
-     // Ambil list dari localStorage
-     const testimoniList =
-JSON.parse(localStorage.getItem('testimoniList')) || [];
-      
-     // Tambahkan testimoni baru
-     testimoniList.pust(dataBaru);
-    
-     // Simpan kembali ke localStorage
-    localStorage.setItem('testimoniList' ,
-JSON.stringify(testimoniList));
-     // Arahkan ke halaman konfirmasi
-     window.location.href= 'proses-testimoni.html';
-          })
+        // Pindah ke halaman konfirmasi
+        window.location.href = 'proses-testimoni.html';
+    });
 </script>
+
+</body>
+</html>
